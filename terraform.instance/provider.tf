@@ -1,0 +1,3 @@
+resource provider_aws {
+  
+}
