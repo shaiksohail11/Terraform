@@ -1,6 +1,6 @@
-.exe
-.hcl
-.terraform
-.tfstate
-.backup
+*.exe
+*.hcl
+*.terraform
+*.tfstate
+*.backup
 
