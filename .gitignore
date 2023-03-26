@@ -1,4 +1,6 @@
 .exe
 .hcl
 .terraform
+.tfstate
+.backup
 
