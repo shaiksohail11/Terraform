@@ -1,8 +1,7 @@
-resource "aws_s3_bucket" "shaik" {
-  bucket = "qt-thoughts-1"
-
+resource "aws_vpc" "myvpc" {
+  cidr_block = "192.168.0.0/16"
+  
   tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
+    "Name" = "my-vpc"
   }
 }
