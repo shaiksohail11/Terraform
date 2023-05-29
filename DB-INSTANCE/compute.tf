@@ -22,6 +22,7 @@ resource "aws_security_group" "web" {
   depends_on = [
     aws_subnet.app1
   ]
+  
 }
 
 data "aws_ami_ids" "ubuntu" {
