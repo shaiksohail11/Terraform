@@ -6,7 +6,7 @@
   
 *  Terraform can manage low-level components like compute, storage, and networking resources, as well as high-level components like DNS entries and SaaS features.
 
-![](images/terraform7.png)
+![](./imagesimages/terraform7.png)
 
 ### Prerequisites
 
@@ -20,7 +20,7 @@ Ensure you have the following prerequisites installed:
 
 * Terraform creates and manages resources on cloud platforms and other services through their application programming interfaces (APIs). Providers enable Terraform to work with virtually any platform or service with an accessible API.
 
-![](images/terraform5.png)
+![](./images/terraform5.png)
 
 The core Terraform workflow consists of three stages:
 
@@ -30,7 +30,7 @@ The core Terraform workflow consists of three stages:
   
 * `Apply:` On approval, Terraform performs the proposed operations in the correct order, respecting any resource dependencies. For example, if you update the properties of a VPC and change the number of virtual machines in that VPC, Terraform will recreate the VPC before scaling the virtual machines.
 
-![](images/terraform6.png)
+![](./images/terraform6.png)
 
 ### Lets create a basic terraform template for virtual-network.
 
@@ -80,13 +80,13 @@ In this example:
 
 * When you run Terraform commands directly from such a directory, it is considered the root module. So in this sense, every Terraform configuration is part of a module. 
 
-![](images/terraform8.png)
+![](./images/terraform8.png)
   
 * A module that is called by another configuration is sometimes referred to as a "child module" of that configuration.
   
 * You may have a simple set of Terraform configuration files such as:
   
-![](images/terraform3.png)
+![](./images/terraform3.png)
 
 # Why should we use Terraform Modules.
 
@@ -160,7 +160,7 @@ The count meta-argument accepts a whole number, and creates that many instances 
 
 **How Count Works:**
 
-![](images/count-diff.png)
+![](./images/count-diff.png)
 
 * Each virtual-network has a distinct infrastructure object associated with it, and each is separately created, updated, or destroyed when the    configuration is applied.
 
@@ -198,14 +198,14 @@ When count is set, Terraform distinguishes between the block itself and the mult
 
 ### our voziq Terraform Template Looks like:
 
-![](images/terraform1.png)
+![](./images/terraform1.png)
 
 ### To Convert the above Voziq Terraform Template into Modules.
 
 * We have to create each resource as a module.
 * Always modules should be in the sub-directory or root module
   
-![](images/module_structure.png)
+![](./images/module_structure.png)
 
 In `Common-Module` we have all the resources that are used by both `windows and ubuntu modules`.
 
@@ -231,7 +231,7 @@ resource "azurerm_public_ip" "public_ip" {
 
 create_public_ip = false
 ```
-![](images/false.gif)
+![](./images/false.gif)
 
 We have used count function in resource creation followed by length() `count = length(var.nic_names)`. So that it will create resources based on the network Interfaces created.
 
@@ -259,7 +259,7 @@ resource "azurerm_network_interface" "nic" {
 
 whenever we require public_ip_id and public_subnet_id we will uncomment the condition and run the terraform module.
 
-![](images/true.gif)
+![](./images/true.gif)
 
 * After creating individual modules, now we can call them in to the root module. 
 
@@ -282,11 +282,11 @@ output "azurerm_resource_group_id" {
 
 Below We can see how modules are being called.
 
-![](images/terraform10.png)
+![](./images/terraform10.png)
 
 If we want to give the variable values in a file, we can give them in variables.tfvars of root module
 
-![](images/terraform11.png)
+![](./images/terraform11.png)
 
 
 * Now execute `terraform init` to download the provider and modules. 
@@ -297,7 +297,7 @@ If we want to give the variable values in a file, we can give them in variables.
 
 output: 
 
-![](images/MicrosoftTeams-image%20(1).png)
+![](./images/MicrosoftTeams-image%20(1).png)
 
 
 
