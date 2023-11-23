@@ -6,7 +6,7 @@
   
 *  Terraform can manage low-level components like compute, storage, and networking resources, as well as high-level components like DNS entries and SaaS features.
 
-![](./imagesimages/terraform7.png)
+![](./images/terraform7.png)
 
 ### Prerequisites
 
